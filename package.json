@@ -18,6 +18,7 @@
     "@mui/x-charts": "^8.17.0",
     "@mui/x-data-grid": "^8.18.0",
     "@tailwindcss/vite": "^4.1.17",
+    "axios": "^1.13.2",
     "chart.js": "^4.5.1",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
