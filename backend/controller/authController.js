@@ -73,15 +73,17 @@ export const LoginController = async (req, res)=>{
             const data = {_id : user._id};
             const PRIVATE_KEY = "OB01"
             const token = jwt.sign(data, PRIVATE_KEY, {
-                expiresIn: "10m"
+                expiresIn: "24h"
             })
 
 
         return res.json({
-            message: "Login SUccessFull",
+            message: "Login SuccessFull",
             status: true,
-            token: token
+            token
         })
+
+        
         console.log("user",user)
     } catch (error) {
         res.json({

@@ -36,6 +36,8 @@ const handleLogin = async ()=>{
   })
   console.log(api)
   if(api.data.status){
+    localStorage.setItem('token', api.data.token)
+    
     navigate('/Dashboard')
   }else{
     alert(api.data.message)
