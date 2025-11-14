@@ -39,16 +39,18 @@ const ExpandMore = styled((props) => {
   ],
 }));
 
-export default function TripCard() {
+export default function TripCard({ trip }) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+
+
   return (
     <Card sx={{  maxWidth: 250,
-    maxHeight: 300,
+    maxHeight: 350,
     borderRadius: "10px",
     margin: "4px",
     boxShadow: "2px 2px 8px rgba(0,0,0,0.2)",
@@ -64,11 +66,14 @@ export default function TripCard() {
       <CardMedia
         component="img"
         height="100"
-        image="src/assets/bg.svg"
-        alt="Paella dish"
+        image={trip.img}
+        alt={trip.Name}
       />
       <CardContent>
-       
+       <Typography variant="h6">{trip.Name}</Typography>
+       <Typography variant="body2" color="text.secondary">{trip.Location}</Typography>
+       <Typography variant="body2" color="text.secondary">{trip.Price}</Typography>
+  
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
