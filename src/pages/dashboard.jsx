@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import Mybtn from '../components/btn';
@@ -15,35 +15,27 @@ import BasicBars from '../components/chart';
 import BasicTable from '../components/userTable';
 import Navbar from '../components/navbar';
 import SideBar from '../components/sideBar';
+import CreateForm from '../components/forms';
+import Modal from '../components/modal';
 const Dashboard = () => {
   
   
-  const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 600, settings: { slidesToShow: 1 } },
-  ],
-};
-  
+const [showForm, setShowForm] = useState(false)
   
     return (
     <>
    <div className='flex gap-2'>
     <SideBar/>
    <div className=' w-full bg-gray-50'>
-       <Navbar value={"Welcome Adrian 🙌"} btnValue={"Create A Trip"}/>
+       <Navbar value={"Welcome Adrian 🙌"} btnValue={"Create A Trip"} onClick={()=>{setShowForm(true)}}/>
         <div className='h-36 p-2 mt-4 flex justify-evenly '>
-            <StatsCard/>
-             <StatsCard/>
-              <StatsCard/>
+            <StatsCard value={"All Users"}/>
+             <StatsCard value={"All Trips"}/>
+              <StatsCard value={"Active Users Today"}/>
         </div>
-        <div className=' mt-3 h-fit p-4 flex justify-evenly overflow-x-auto scrollbar-hide mx-2'>
-           
+        <span className='text-3xl  ml-4'>Trips</span>
+        <div className=' flex-col justify-center items-center md:mt-1 h-fit  p-4 flex md:flex-row md:justify-evenly overflow-x-auto scrollbar-hide mx-2'>
+          
         <TripCard/>
         <TripCard/>
         <TripCard/>
@@ -57,8 +49,8 @@ const Dashboard = () => {
             <BasicLineChart/>
             </div>
         </div>
-        <div className=' h-fit mt-4 flex justify-center items-center mx-2 gap-2 mb-4'>
-            <div className='w-1/2 h-100 shadow-2xl  rounded-xl p-4 flex flex-col justify-center '>
+        <div className='hidden md:h-fit md:mt-4 md:flex justify-center items-center mx-2 gap-2 mb-4'>
+            <div className='w-1/2 h-100 shadow-2xl  rounded-xl p-4 flex flex-col justify-center items-center'>
             <span className='text-2xl my-1 '> Latest Users Signup</span>
               <BasicTable/>
             </div>
@@ -69,6 +61,9 @@ const Dashboard = () => {
         </div>
    </div>
    </div>
+      
+     {showForm && <Modal setShowForm={setShowForm}/>}
+
     </>
   )
 }

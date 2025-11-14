@@ -50,6 +50,7 @@ export default function TripCard() {
     <Card sx={{  maxWidth: 250,
     maxHeight: 300,
     borderRadius: "10px",
+    margin: "4px",
     boxShadow: "2px 2px 8px rgba(0,0,0,0.2)",
     //transition: "all 0.3s ease", // smooth hover effect
     "&:hover": {
