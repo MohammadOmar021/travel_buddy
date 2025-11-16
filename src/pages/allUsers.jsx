@@ -18,12 +18,12 @@ const userColumns = [
 
   return (
     <>
-     <div className='flex gap-2'>
+     <div className='flex gap-2  '>
  <SideBar/>
-      <div className='flex flex-col w-full'>
+      <div className='flex flex-col w-screen'>
         <Navbar value={"Manage All Users"} btnValue={"Add New Users"}/>
-      <div className='mt-3  h-full flex flex-col justify-center items-center'>
-        <div className='w-250 shadow-2xl'>
+      <div className='mt-3  w-screen lg:w-4xl border lg:absolute lg:top-40 lg:right-60 '>
+        <div className=' shadow-2xl '>
           <DataTable data={userArr} columns={userColumns} />
         </div>
       </div>

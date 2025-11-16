@@ -11,12 +11,13 @@ const AllTrips = () => {
     <div className='flex gap-2 h-full'>
         
     <SideBar/>
-    <div className='flex flex-col h-fit w-full md:w-full  md:h-screen'>
+    <div className='flex flex-col h-full w-full md:w-full  md:h-screen'>
         <Navbar value={"Trips"} btnValue={"Create a Trip"}/> 
-        <div className=' md:w-full h-fit  my-4 flex flex-wrap gap-4 justify-center items-center overflow-y-scroll px-2'>
+        <div className=' md:w-full h-full overflow-x-auto md:my-4 flex md:flex-wrap  md:justify-center md:items-center  md:px-2 ' >
            
                 {tripArr.map((trip, index) => (
                     <TripCard key={index} trip={trip} />
+                    
                 ))}
             
             

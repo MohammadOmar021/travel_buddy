@@ -1,9 +1,10 @@
 import React from 'react'
 import Mybtn from './btn'
-
+import MyDrawer from './drawer'
 const Navbar = ({value, btnValue, onClick}) => {
   return (
     <>
+     <div className='flex justify-center  '> 
     <div className=' flex flex-col justify-evenly  items-center mt-4 w-full  h-50  md:h-20 md:w-full p-4 md:flex md:flex-row md:justify-between md:items-center'>
             <div className='flex flex-col'>
                  <span className='text-xl md:text-3xl'>{value}</span>
@@ -13,6 +14,8 @@ const Navbar = ({value, btnValue, onClick}) => {
                <Mybtn value={btnValue} variant='contained' onClick={onClick}/>
                
             </div>
+        </div>
+         <div className='md:hidden mt-4 '>< MyDrawer/></div>
         </div>
     </>
   )

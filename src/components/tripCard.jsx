@@ -49,7 +49,8 @@ export default function TripCard({ trip }) {
 
 
   return (
-    <Card sx={{  maxWidth: 250,
+    <Card sx={{  maxWidth: 200,
+      flexShrink: 0,
     maxHeight: 350,
     borderRadius: "10px",
     margin: "4px",
