@@ -17,7 +17,17 @@ export default function BasicTable({data, columns}) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ }} aria-label="simple table">
+      <Table sx={{ 
+        
+      boxShadow: "2px 2px 8px rgba(0,0,0,0.2)",
+    transition: "all 0.3s ease", // smooth hover effect
+    "&:hover": {
+      boxShadow: "5px 5px 20px rgba(0,0,0,0.5)",
+      transform: "translateY(-5px)", // optional: slight lift effect
+    },
+    //border: "1px solid #ccc",
+     
+      }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell sx={{fontSize:"20px", fontWeight:"bold"}}>Name</TableCell>

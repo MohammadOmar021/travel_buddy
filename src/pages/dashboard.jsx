@@ -83,7 +83,7 @@ const tripColumns = [
         <SideBar />
         <div className=' w-full bg-gray-50'>
           <Navbar value={"Welcome Adrian 🙌"} btnValue={"Create A Trip"} onClick={() => { setShowForm(true) }} />
-          <div className='h-36 p-2 mt-4 flex justify-evenly '>
+          <div className='h-36 p-2 mt-4 flex  justify-evenly '>
             <StatsCard value={"All Users"} numbers={userArr.length} />
             <StatsCard value={"All Trips"} numbers={tripArr.length} />
             <StatsCard value={"Active Users Today"} numbers={userArr.filter(user => user.status === "Active").length} />
@@ -96,22 +96,22 @@ const tripColumns = [
               </div>
             ))}
           </div>
-          <span  className='text-3xl  ml-4'> User Growth Stats</span>
-          <div className=' flex flex-row overflow-x-auto w-full gap-1 md:mt-4 md:justify-center md:items-center'>
+          <span  className='text-3xl  ml-4 '> User Growth Stats</span>
+          <div className=' flex flex-row overflow-x-auto w-full  mb-3   md:justify-center md:items-center'>
             
-            <div className='  h-full w-fit  md:w-1/2 shadow-xl rounded-2xl'>
+            <div className='  h-full w-full  md:w-1/2   '>
               <BasicBars />
             </div>
-            <div className=' h-full w-fit  md:w-1/2 shadow-xl rounded-2xl'>
+            <div className=' h-full w-full  md:w-1/2  '>
               <BasicLineChart tripArr={tripArr} />
             </div>
           </div>
-          <div className=' md:h-fit  md:flex justify-center items-center mx-2 gap-2 mb-4'>
-            <div className='w-full md:w-1/2 h-100 shadow-2xl  rounded-xl p-4 flex flex-col justify-center items-center'>
+          <div className=' md:h-fit  md:flex justify-center items-center  mx-2 gap-2 mb-4'>
+            <div className='w-full md:w-1/2 h-100   rounded-xl p-4 flex flex-col justify-center items-center'>
               <span className='text-2xl my-1 '> Latest Users Signup</span>
               <BasicTable  data={userArr.slice(0, 5)} columns={userColumns} />
             </div>
-            <div className='w-full md:w-1/2 h-100  shadow-2xl rounded-xl p-4 flex flex-col justify-center items-center'>
+            <div className='w-full md:w-1/2 h-100  rounded-xl p-4 flex flex-col justify-center items-center'>
               <span className='text-2xl my-1  '> Latest Trip Booking</span>
               <BasicTable data={tripArr.slice(0, 5)} columns={tripColumns} />
             </div>
