@@ -89,29 +89,29 @@ const tripColumns = [
             <StatsCard value={"Active Users Today"} numbers={userArr.filter(user => user.status === "Active").length} />
           </div>
           <span className='text-3xl  ml-4'>Trending Trips</span>
-          <div className=' flex-col justify-center items-center md:mt-1 h-fit  p-4 flex md:flex-row md:justify-evenly overflow-x-auto scrollbar-hide mx-2'>
+          <div className=' flex-row mx-1 items-center md:mt-1 h-fit  p-4 flex md:flex-row md:justify-evenly overflow-x-auto  md:mx-2 '>
             {tripArr.slice(0, 4).map((trip, index) => (
-              <TripCard key={index} trip={trip} />
-            
-
+              <div key={index} className='shrink-0 w-full sm:w-80'>
+                <TripCard trip={trip} />
+              </div>
             ))}
           </div>
           <span  className='text-3xl  ml-4'> User Growth Stats</span>
-          <div className='hidden md:h-fit lg:flex gap-1 mt-4 justify-center items-center'>
+          <div className=' flex flex-row overflow-x-auto w-full gap-1 md:mt-4 md:justify-center md:items-center'>
             
-            <div className='h-full  w-1/2 shadow-xl rounded-2xl'>
+            <div className='  h-full w-fit  md:w-1/2 shadow-xl rounded-2xl'>
               <BasicBars />
             </div>
-            <div className='h-full  w-1/2 shadow-xl rounded-2xl'>
+            <div className=' h-full w-fit  md:w-1/2 shadow-xl rounded-2xl'>
               <BasicLineChart tripArr={tripArr} />
             </div>
           </div>
-          <div className='hidden md:h-fit md:mt-4 md:flex justify-center items-center mx-2 gap-2 mb-4'>
-            <div className='w-1/2 h-100 shadow-2xl  rounded-xl p-4 flex flex-col justify-center items-center'>
+          <div className=' md:h-fit  md:flex justify-center items-center mx-2 gap-2 mb-4'>
+            <div className='w-full md:w-1/2 h-100 shadow-2xl  rounded-xl p-4 flex flex-col justify-center items-center'>
               <span className='text-2xl my-1 '> Latest Users Signup</span>
               <BasicTable  data={userArr.slice(0, 5)} columns={userColumns} />
             </div>
-            <div className='w-1/2 h-100  shadow-2xl rounded-xl p-4 flex flex-col justify-center items-center'>
+            <div className='w-full md:w-1/2 h-100  shadow-2xl rounded-xl p-4 flex flex-col justify-center items-center'>
               <span className='text-2xl my-1  '> Latest Trip Booking</span>
               <BasicTable data={tripArr.slice(0, 5)} columns={tripColumns} />
             </div>

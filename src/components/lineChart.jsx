@@ -8,6 +8,8 @@ export default function BasicBars({tripArr}) {
       xAxis={[{ data: [tripArr[0].Location, tripArr[1].Location, tripArr[2].Location] }]}
       series={[{ data: [4,3,5] }]}
       height={300}
+      width={400}
+
     />
   );
 }

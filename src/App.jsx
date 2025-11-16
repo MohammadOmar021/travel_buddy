@@ -21,11 +21,11 @@ function App() {
     <Routes>
    <Route path='/' element={<Signup/>}></Route>
     <Route path='/Login' element={<Login/>}></Route>
-    <Route element={<AuthRoute />}>
+    
     <Route path='/Dashboard'  element={<Dashboard />}/>
     <Route path='/AllUsers' element={<AllUsers/>}/>
     <Route path='/AllTrips' element={<AllTrips/>}/>
-    </Route>
+ 
     
     
     </Routes>
